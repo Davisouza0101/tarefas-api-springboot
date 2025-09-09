@@ -1,0 +1,126 @@
+{
+  "info": {
+    "name": "Tarefas API Collection",
+    "_postman_id": "b7e2c29a-0000-0000-0000-000000000000",
+    "description": "Coleção para testes da API de Tarefas com evidências Nome + RU.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "POST Criar Tarefa (com Nome + RU)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"nome\": \"Desenvolvimento da API\", \"dataEntrega\": \"2025-12-12\", \"responsavel\": \"{{firstName}} {{ru}}\"}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/tarefas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "tarefas"
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET Listar Tarefas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/tarefas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "tarefas"
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET Buscar por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/tarefas/{{id}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "tarefas",
+            "{{id}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "PUT Atualizar Tarefa (Nome + RU)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"nome\": \"Desenvolvimento da API - ATUALIZADA\", \"dataEntrega\": \"2025-12-12\", \"responsavel\": \"{{firstName}} {{ru}}\"}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/tarefas/{{id}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "tarefas",
+            "{{id}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "DELETE Remover Tarefa (Nome + RU)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/tarefas/{{id}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "tarefas",
+            "{{id}}"
+          ]
+        }
+      }
+    }
+  ]
+}
